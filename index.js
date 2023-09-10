@@ -7,7 +7,7 @@ const comandOptions = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
             [{text: 'Комплимент', callback_data:'1'},{text: 'Подними настроение', callback_data:'2'}], 
-            [{text: 'My sexy photo', callback_data:'3'}],
+            [{text: 'My photo', callback_data:'3'}],
     
         ]
     }
