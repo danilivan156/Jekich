@@ -65,6 +65,7 @@ const mood = [
     'Благодаря тебе я могу хотя бы иногда заниматься тем чем безумно хочу, учиться и программировать',
     'У тебя теперь появился человек, который тебя любит, дорожит тобой, боится потерять и который готов тебе всегда тоже помочь)'
 ]
+let text = promises.join (',')
 const start = async()=>{
     bot.setMyCommands([
         {command: '/start', description: 'Начать'},
@@ -78,8 +79,8 @@ const start = async()=>{
                 reply_markup:{
                     keyboard:[
                         ['Комплимент','Подними настроение'],
-                        ['My photo']
-                    
+                        ['My sexy photo'],
+                        ['Защита от пиздабола']
                     ]
                 }
             })
@@ -93,7 +94,21 @@ const start = async()=>{
         else if (msg.text == 'My sexy photo'){
              bot.sendPhoto(chatId, photos[itemPhoto])
         }
-       
+        else if (msg.text == 'Защита от пиздабола'){
+            await bot.sendMessage(chatId,"ХУХ",{
+                reply_markup:{
+                    keyboard:[
+                        ['Показать все обещания'],
+                        ['Добавить обещание'],
+                        ['Назад']
+                    ]
+                }
+            })  
+        }
+        else if (msg.text == 'Показать все обещания'){
+            await  bot.sendMessage(chatId,text)
+
+        }
         else if (msg.text == 'Назад'){
             await  bot.sendMessage(chatId,'What do you want? ',{
                 reply_markup:{
