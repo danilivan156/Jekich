@@ -54,7 +54,7 @@ const photos = [
 const sexPhoto = [
     'Красивая', 'умная', 'загадочная', 'сообразительная'
 ] // доступ только с определенным айди
-let promises = ['Накачаться', 'Уровень английского', 'Canada']
+
 const mood = [
     'Я очень рад что у меня появился человек, который беспокоится за меня',
     'Я безумно счастлив и благодарен тебе, что ты разделяешь мои проблемы и помогаешь мне их решать',
@@ -79,8 +79,8 @@ const start = async()=>{
                 reply_markup:{
                     keyboard:[
                         ['Комплимент','Подними настроение'],
-                        ['My sexy photo'],
-                        ['Защита от пиздабола']
+                        ['My photo']
+                    
                     ]
                 }
             })
@@ -94,21 +94,7 @@ const start = async()=>{
         else if (msg.text == 'My sexy photo'){
              bot.sendPhoto(chatId, photos[itemPhoto])
         }
-        else if (msg.text == 'Защита от пиздабола'){
-            await bot.sendMessage(chatId,"ХУХ",{
-                reply_markup:{
-                    keyboard:[
-                        ['Показать все обещания'],
-                        ['Добавить обещание'],
-                        ['Назад']
-                    ]
-                }
-            })  
-        }
-        else if (msg.text == 'Показать все обещания'){
-            await  bot.sendMessage(chatId,text)
-
-        }
+       
         else if (msg.text == 'Назад'){
             await  bot.sendMessage(chatId,'What do you want? ',{
                 reply_markup:{
