@@ -7,8 +7,8 @@ const comandOptions = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
             [{text: 'Комплимент', callback_data:'1'},{text: 'Подними настроение', callback_data:'2'}], 
-            [{text: 'My sexy photo', callback_data:'3'}],
-            [{text: 'Защита от пиздабола', callback_data:'4'}]
+            [{text: 'My photo', callback_data:'3'}],
+            
         ]
     }
     )
@@ -79,7 +79,7 @@ const start = async()=>{
                 reply_markup:{
                     keyboard:[
                         ['Комплимент','Подними настроение'],
-                        ['My sexy photo'],
+                        ['My photo'],
                         ['Защита от пиздабола']
                     ]
                 }
@@ -91,7 +91,7 @@ const start = async()=>{
         else if (msg.text == 'Комплимент'){
             await bot.sendMessage(chatId,kompliments[itemKompliment])
         }
-        else if (msg.text == 'My sexy photo'){
+        else if (msg.text == 'My photo'){
              bot.sendPhoto(chatId, photos[itemPhoto])
         }
         else if (msg.text == 'Защита от пиздабола'){
@@ -114,7 +114,7 @@ const start = async()=>{
                 reply_markup:{
                     keyboard:[
                         ['Комплимент','Подними настроение'],
-                        ['My sexy photo'],
+                        ['My photo'],
                         ['Защита от пиздабола'],
                     ]
                 }
