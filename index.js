@@ -8,7 +8,7 @@ const comandOptions = {
         inline_keyboard: [
             [{text: 'Комплимент', callback_data:'1'},{text: 'Подними настроение', callback_data:'2'}], 
             [{text: 'My photo', callback_data:'3'}],
-    [{text: 'Защита от пиздабола', callback_data:'4'}]
+            [{text: 'Защита от пиздабола', callback_data:'4'}]
         ]
     }
     )
